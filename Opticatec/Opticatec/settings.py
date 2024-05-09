@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'Opticatec.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'libreria4',
+        'NAME': 'tiendagafas',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
