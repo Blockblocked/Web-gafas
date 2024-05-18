@@ -73,16 +73,18 @@ WSGI_APPLICATION = 'Opticatec.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+# settings.py
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tiendagafas',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',  # El puerto predeterminado de MySQL en XAMPP es 3306
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbname_n6ks',
+        'USER': 'user1',
+        'PASSWORD': '2MgIxMPSZVfIMggiloSj6v8IGVioh6MO',
+        'HOST': 'dpg-cp4daai1hbls73evt4t0-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
