@@ -3,11 +3,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+   
+
+    
+    
 </head>
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 0e151518db5ca4bca40c85a46c23da6dc67dd46d
 <body>
   
     <header class="bg-white">
@@ -91,10 +101,98 @@
         </div>
       </header>
 
+      
+
 
 <div class="w-[1300px] mt-14">    
 {% block contenido %} {% endblock %}  
 </div>
+
+<footer class="bg-gray-800 py-8">
+  <div class="container mx-auto px-4">
+      <div class="flex justify-center items-center">
+          <ul class="flex gap-6">
+              <li>
+                  <a href="https://web.whatsapp.com/" target="_blank" class="text-white hover:text-gray-400">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="https://www.instagram.com" target="_blank" class="text-white hover:text-gray-400">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" target="_blank" class="text-white hover:text-gray-400">
+                      <i class="fab fa-facebook"></i>
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div class="mt-4">
+          <a href="#politicas" class="text-white hover:text-gray-400">Políticas</a>
+          <span class="text-gray-400 mx-2">|</span>
+          <a href="#servicios" class="text-white hover:text-gray-400">Servicios</a>
+          <span class="text-gray-400 mx-2">|</span>
+          <a href="#sobre-nosotros" class="text-white hover:text-gray-400">Sobre nosotros</a>
+      </div>
+  </div>
+</footer>
+
+<!-- Contenido emergente de Políticas -->
+<div id="politicas" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
+  <div class="bg-white p-6 rounded-lg max-w-lg">
+      <!-- Contenido de las políticas -->
+      <button id="cerrar-politicas" class="absolute top-0 right-0 px-3 py-2 text-gray-800 hover:text-gray-600 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+  </div>
+</div>
+
+<!-- Contenido emergente de Servicios -->
+<div id="servicios" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
+  <div class="bg-white p-6 rounded-lg max-w-lg">
+      <!-- Contenido de los servicios -->
+      <button id="cerrar-servicios" class="absolute top-0 right-0 px-3 py-2 text-gray-800 hover:text-gray-600 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+  </div>
+</div>
+
+<!-- Contenido emergente de Sobre nosotros -->
+<div id="sobre-nosotros" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
+  <div class="bg-white p-6 rounded-lg max-w-lg">
+      <!-- Contenido de Sobre nosotros -->
+      <button id="cerrar-sobre-nosotros" class="absolute top-0 right-0 px-3 py-2 text-gray-800 hover:text-gray-600 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+  </div>
+</div>
+
+
+<script>
+  document.querySelectorAll('footer a').forEach(link => {
+      link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = e.target.getAttribute('href').substring(1);
+          document.getElementById(target).classList.toggle('hidden');
+      });
+  });
+
+  document.querySelectorAll('[id^="cerrar-"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+          const targetId = btn.id.replace('cerrar-', '');
+          document.getElementById(targetId).classList.add('hidden');
+      });
+  });
+</script>
+
 
 </body>
 </html>
